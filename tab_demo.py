@@ -62,8 +62,7 @@ This step is to carefully identify and extract the key points without leaving ou
                  height=100, key="6")
     st.text_area("7. Intent detection",
                  value="Step 6. Conduct intention classification for each key points summarized by step 3.", height=100, key="7")
-    st.text_area("8. Output Format", value='''
-    Only return the final result in JSON list format strictly follows below specification. Begin with '[' and end with ']'. No additional word. 
+    st.text_area("8. Output Format", value='''Only return the final result in JSON list format strictly follows below specification. Begin with '[' and end with ']'. No additional word. 
     [    {   "SUMMARY": "The budget constraints are challenging",
              "TOPIC": "Budget",
              "SENTIMENT": "Negative",
@@ -79,10 +78,10 @@ This step is to carefully identify and extract the key points without leaving ou
     _, left_button_col, right_button_col = st.columns([13, 1, 1])
     with left_button_col:
         st.button("Save", key="index=1")
-        # st.success("Settings saved", label_visibility="hidden")
+        st.success("Settings saved")
     with right_button_col:
         st.button("Execute", key="index=2")
-        # st.success("Executing...", label_visibility="hidden")
+        st.success("Executing...")
 
 with tab3:
     st.subheader('Set Parameters for Intelligent Scoring', divider='blue')
@@ -104,7 +103,7 @@ with tab3:
 
     # Sentiment Section
     with left_column:
-        st.markdown("<h2 style='font-size: 24px;'>1. Sentiment</h2>", unsafe_allow_html=True)
+        st.markdown("<h2 style='font-size: 24px;'>▶️ Sentiment</h2>", unsafe_allow_html=True)
         st.markdown("<h2 style='font-size: 20px;'>Weight</h2>", unsafe_allow_html=True)
         sentiment_weight = st.number_input("Weight", 0, 100, 50, key="1", label_visibility="collapsed")
 
@@ -116,7 +115,7 @@ with tab3:
 
     # Intent Section
     with middle_column:
-        st.markdown("<h2 style='font-size: 24px;'>2. Intent</h2>", unsafe_allow_html=True)
+        st.markdown("<h2 style='font-size: 24px;'>▶️ Intent</h2>", unsafe_allow_html=True)
         st.markdown("<h2 style='font-size: 20px;'>Weight</h2>", unsafe_allow_html=True)
         sentiment_weight = st.number_input("Weight", 0, 100, 50, key="3", label_visibility="collapsed")
 
@@ -128,7 +127,7 @@ with tab3:
 
     # Topic Section
     with right_column:
-        st.markdown("<h2 style='font-size: 24px;'>3. Topic</h2>", unsafe_allow_html=True)
+        st.markdown("<h2 style='font-size: 24px;'>▶️ Topic</h2>", unsafe_allow_html=True)
         st.markdown("<h2 style='font-size: 20px;'>Weight</h2>", unsafe_allow_html=True)
         sentiment_weight = st.number_input("Weight", 0, 100, 50, key="2", label_visibility="collapsed")
 
