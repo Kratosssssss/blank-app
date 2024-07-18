@@ -45,7 +45,7 @@ with tab2:
     st.text_area("2. Language translation",
                  value="Given a text document of employee feedback, you need to summarize and classify by sentiment, topic and intention.",
                  height=100, key="21")
-    st.text_area("3. Name entity reconnection", value='''Step 1. Translate
+    st.text_area("3. Name entity recognition", value='''Step 1. Translate
 Translate text document into English.
 
 Step 2. 
