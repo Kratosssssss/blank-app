@@ -2,7 +2,7 @@ import streamlit as st
 
 st.set_page_config(layout="wide")
 st.image("image/banner.png", use_column_width=True)
-tab1, tab2, tab3, tab4 = st.tabs(["1.Upload Feedback Data", " Step Two: Preprocessing", " Step 3: Intelligent Scoring", "Step 4. Manage Knowledge Base"])
+tab1, tab2, tab3, tab4 = st.tabs(["1.Upload Feedback Data", " 2️⃣ Preprocessing", " Step 3: Intelligent Scoring", "Step 4. Manage Knowledge Base"])
 
 
 prompt_textbox_css = """
@@ -17,6 +17,11 @@ prompt_textbox_css = """
         font-size: 20px !important;
         color: black !important;
         border: 0.75px solid black !important;  /* Add black border */
+    }
+    subheader {
+        font-family: 'Courier New', Courier, monospace !important;
+        font-size: 111px !important;
+        color: black !important;
     }
     </style>
 """
@@ -80,14 +85,14 @@ This step is to carefully identify and extract the key points without leaving ou
         # st.success("Executing...", label_visibility="hidden")
 
 with tab3:
-    st.header('Set Parameters for Intelligent Scoring', divider='blue')
+    st.subheader('Set Parameters for Intelligent Scoring', divider='blue')
 
     # Create columns to organize content
     left_column, middle_column, right_column = st.columns(3)
 
     # Sentiment Section
     with left_column:
-        st.subheader("1. Sentiment")
+        st.markdown("<h2 style='font-size: 24px;'>1. Sentiment</h2>", unsafe_allow_html=True)
         sentiment_weight = st.number_input("Weight", 0, 100, 50, key="1")
 
         sentiment_options = {"Strong Negative": -2, "Negative": -1, "Neutral": 0, "Positive": 1, "Strong Positive": 2}
@@ -97,7 +102,7 @@ with tab3:
 
     # Intent Section
     with middle_column:
-        st.subheader("2. Intent")
+        st.markdown("<h2 style='font-size: 24px;'>2. Intent</h2>", unsafe_allow_html=True)
         intent_weight = st.number_input("Weight", 0, 100, 50, key="2")
 
         intent_options = {"Suggestion": 5, "Criticism": 4, "Warning": 3, "Observation": 2, "Complaint": 1}
@@ -107,7 +112,7 @@ with tab3:
 
     # Topic Section
     with right_column:
-        st.subheader("3. Topic")
+        st.markdown("<h2 style='font-size: 24px;'>3. Topic</h2>", unsafe_allow_html=True)
         topic_weight = st.number_input("Weight", 0, 100, 50, key="3")
 
         topic_options = {"Budget": 4, "Communication": 4, "Decision Making": 4, "Efficiency": 2, "Automation": 1,
